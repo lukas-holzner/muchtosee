@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MucToSee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Map-Clean.css">
+    <link rel="stylesheet" href="assets/css/maps.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean" style="background-color: rgb(242,242,242);">
+        <div class="container"><img src="assets/img/0c58b7cd-c6c1-4bb1-8825-2eb32fe33c83_200x200.png" style="width: 100px;margin-bottom: -20px;margin-top: -20px;"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">München entdecken</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="map-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">München</h2>
+            </div>
+            <div class="col">
+                <div class="row d-xl-flex flex-grow-0">
+                    <div class="col" style="max-width: 60px;"><label class="col-form-label">Start:</label></div>
+                    <div class="col d-xl-flex align-items-xl-center"><input type="text" id="start"></div>
+                </div>
+                <div class="row d-xl-flex align-items-xl-center" style="margin-top: 10px;">
+                    <div class="col d-xl-flex align-items-xl-end">
+                        <div class="dropdown" style="padding-bottom: 20px;min-width: 100%;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="category" type="button" style="min-width: 20%;margin-top: 10px;">Kategorie&nbsp;</button>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item category" role="presentation">Kirchen</a><a class="dropdown-item category" role="presentation">Museen</a><a class="dropdown-item category" role="presentation">Bars</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-xl-flex align-items-xl-center" style="margin-top: 10px;">
+                    <div class="col d-xl-flex align-items-xl-end">
+                        <div class="dropdown" style="padding-bottom: 20px;min-width: 100%;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="movements" type="button" style="min-width: 20%;">Fortbewegung&nbsp;</button>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item movement" role="presentation" id="BICYCLING">Fahrrad</a><a class="dropdown-item movement" role="presentation" id="TRANSIT">ÖPNV</a><a class="dropdown-item movement" role="presentation" id="WALKING">Zu Fuß</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"><button class="btn btn-primary" id="submit" type="button">Route berrechnen</button></div>
+                    <div class="col"><label style="font-size: 22px;font-style: normal;font-weight: bold;">Dauer:</label><label id="duration" style="font-size: 22px;font-weight: bold;"></label></div>
+                </div>
+            </div>
+        </div><div>
+    
+    <div id="map"></div>
+    <script src="assets/js/maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk_Vpa8UYTwmE0x4z_ZO79ArhQ4-6AWcM&callback=initMap">
+    </script>
+    
+</div></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/maps.js"></script>
+</body>
+
+</html>
