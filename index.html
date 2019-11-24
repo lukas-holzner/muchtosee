@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
     <link rel="stylesheet" href="assets/css/maps.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -18,7 +17,9 @@
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">München entdecken</a></li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="#" onclick="window.location.reload(true);">München entdecken</a>
+                    </li>
                     <li class="nav-item" role="presentation"></li>
                 </ul>
         </div>
@@ -31,20 +32,33 @@
             </div>
             <div class="col">
                 <div class="row d-xl-flex flex-grow-0">
-                    <div class="col" style="max-width: 60px;"><label class="col-form-label">Start:</label></div>
-                    <div class="col d-xl-flex align-items-xl-center"><input type="text" id="start"></div>
+                    <div class="col" style="max-width: 60px;">
+                        <label class="col-form-label">Start:</label>
+                    </div>
+                    <div class="col d-xl-flex align-items-xl-center">
+                        <input type="text" id="start">
+                    </div>
                 </div>
                 <div class="row d-xl-flex align-items-xl-center" style="margin-top: 10px;">
                     <div class="col d-xl-flex align-items-xl-end">
                         <div class="dropdown" style="padding-bottom: 20px;min-width: 100%;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="category" type="button" style="min-width: 20%;margin-top: 10px;">Kategorie&nbsp;</button>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item category" role="presentation">Kirchen</a><a class="dropdown-item category" role="presentation">Museen</a><a class="dropdown-item category" role="presentation">Bars</a></div>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item category" role="presentation">Kirchen</a>
+                                <a class="dropdown-item category" role="presentation">Museen</a>
+                                <a class="dropdown-item category" role="presentation">Bars</a>
+                                <a class="dropdown-item category" role="presentation">Schlittenhuegel</a>
+                                <a class="dropdown-item category" role="presentation">Alle</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row d-xl-flex align-items-xl-center" style="margin-top: 10px;">
                     <div class="col d-xl-flex align-items-xl-end">
                         <div class="dropdown" style="padding-bottom: 20px;min-width: 100%;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="movements" type="button" style="min-width: 20%;">Fortbewegung&nbsp;</button>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item movement" role="presentation" id="BICYCLING">Fahrrad</a><a class="dropdown-item movement" role="presentation" id="TRANSIT">ÖPNV</a><a class="dropdown-item movement" role="presentation" id="WALKING">Zu Fuß</a></div>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item movement" role="presentation" id="BICYCLING">Fahrrad</a>
+                                <a class="dropdown-item movement" role="presentation" id="WALKING">Zu Fuß</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,15 +70,14 @@
         </div><div>
     
     <div id="map"></div>
-    <script src="assets/js/maps.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk_Vpa8UYTwmE0x4z_ZO79ArhQ4-6AWcM&callback=initMap">
-    </script>
+    
     
 </div></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/data.js"></script>
     <script src="assets/js/maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk_Vpa8UYTwmE0x4z_ZO79ArhQ4-6AWcM&callback=initMap"></script>
 </body>
 
 </html>

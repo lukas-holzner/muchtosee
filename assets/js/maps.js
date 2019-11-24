@@ -26,20 +26,24 @@ function initMarkers(datasheet) {
   selectedWaypoints = [];
 
   for (var i = 0; i < datasheet.length; i++) {
-    addMarker(datasheet[i][0],datasheet[i][1],i);
+    addMarker(datasheet[i]['location'],datasheet[i]['name'],i,datasheet[i]['minzeit'],datasheet[i]['maxzeit']);
   }
 }
 
 function createRoute(){
   clearMarkers();
   var resp;
+  var wayp = []
+  selectedWaypoints.forEach(element => {
+    wayp.push(element[0]);
+  });
   var request = {
       origin: startingPoint,
       destination: startingPoint,
       provideRouteAlternatives: false,
       travelMode: travelM,
       optimizeWaypoints: true,
-      waypoints: selectedWaypoints,
+      waypoints: wayp,
       unitSystem: google.maps.UnitSystem.METRIC
     };
   console.log("Ausgewählte Waypoints: ",request);
@@ -58,33 +62,43 @@ function createRoute(){
       }
     });
 }
-
-function markerclicked(coord,i){
+    
+function markerclicked(coord, i, mintime, maxtime){
     markers[i].setAnimation(google.maps.Animation.BOUNCE);
-    selectedWaypoints.push({location: coord, stopover: false});
+    selectedWaypoints.push([{location: coord, stopover: false}, mintime, maxtime]);
     console.log("Ausgewählte Waypoints: ",selectedWaypoints);
 }
 
 function computeTotalDuration(result) {
     var total = 0;
+    var mint = 0;
+    var maxt = 0;
     console.log("Result: "+result);
     var myroute = result.routes[0];
     for (var i = 0; i < myroute.legs.length; i++) {
       total += myroute.legs[i].duration.value;
     }
-    total = total / 60;
-    document.getElementById("duration").innerHTML = Math.round(total)+' min';
-}
+    selectedWaypoints.forEach(element => {
+      console.log("Waypoint Element: ",element);
+      mint += element[1];
+      maxt += element[2];
+    });
+    total = Math.round(total / 60);
+    mint += total;
+    maxt += total;
 
-function addMarker(position, title, i) {
+    document.getElementById("duration").innerHTML = ' Von '+mint+' bis zu '+maxt+' Minuten je nach Aufenthaltszeit.';
+}
+    
+function addMarker(location, name, i, mintime, maxtime) {
   markers.push(new google.maps.Marker({
-    position: position,
+    position: location,
     animation: google.maps.Animation.DROP,
     map: map,
-    title: title
+    title: name
   }));
   markers[markers.length-1].addListener('click', function() {
-        markerclicked(position,i);
+        markerclicked(location,i,mintime,maxtime);
   });
 }
 
@@ -128,5 +142,14 @@ $(".movement").on('click', function(event){
 $(".category").on('click', function(event){
   console.log("Kategorie geklickt ",$(this).attr('id'));
   $('#category').text($(this).text());
-  initMarkers(data[$(this).text()]);
+  if ($(this).text() == "Alle") {
+    var custom = []
+    for (var index in data) {
+      custom = custom.concat(data[index]);
+    }
+    console.log('Alle: ',custom)
+    initMarkers(custom);
+  }else{
+    initMarkers(data[$(this).text()]);
+  }
 });
