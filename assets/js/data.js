@@ -75,5 +75,19 @@ Bars : [{name:'123 Tiki Tiki',minzeit:30,maxzeit:120,location: {lat:48.1321294, 
 {name:'Jaded Monkey',minzeit:30,maxzeit:120,location: {lat:48.1354479, lng:11.5672591}},
 {name:'Kays Bistro',minzeit:30,maxzeit:120,location: {lat:48.1339844, lng:11.5754337}},
 {name:'Kennedys',minzeit:30,maxzeit:120,location: {lat:48.1341489, lng:11.5670761}},
-{name:'Kilians Irish Pub',minzeit:30,maxzeit:120,location: {lat:48.1386744, lng:11.5747577}},] 
+{name:'Kilians Irish Pub',minzeit:30,maxzeit:120,location: {lat:48.1386744, lng:11.5747577}},],
+
+Schlittenhuegel: [{name:'Maximiliansanlagen',minzeit:30,maxzeit:120,location:{lat:48.1469913, lng:11.5995014}},
+{name:'kleiner Hügel',minzeit:30,maxzeit:120,location:{lat:48.14838, lng:11.511442}},
+{name:'großer Hügel',minzeit:30,maxzeit:120,location:{lat:48.147507, lng:11.513588}},
+{name:'kleiner Hügel',minzeit:30,maxzeit:120,location:{lat:48.152687, lng:11.493853}},
+{name:'Monopterus',minzeit:30,maxzeit:120,location:{lat:48.149922, lng:11.590749}},
+{name:'Bavaria',minzeit:30,maxzeit:120,location:{lat:48.130672, lng:11.545958}},
+{name:'Olympiaberg',minzeit:30,maxzeit:120,location:{lat:48.169884, lng:11.551688}},
+{name:'Luitpoldpark',minzeit:30,maxzeit:120,location:{lat:48.172873, lng:11.571108}},
+{name:'Westpark',minzeit:30,maxzeit:120,location:{lat:48.121855, lng:11.516808}},
+{name:'Ostpark',minzeit:30,maxzeit:120,location:{lat:48.114109, lng:11.640513}},
+{name:'Aubinger Lohe',minzeit:30,maxzeit:120,location:{lat:48.173394, lng:11.4029837}},
+{name:'Sendlinger Park',minzeit:30,maxzeit:120,location:{lat:48.106011, lng:11.54114}},
+{name:'Maßmannpark',minzeit:30,maxzeit:120,location:{lat:48.152526, lng:11.559716}},] 
 }
